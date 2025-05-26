@@ -13,7 +13,7 @@ Now if you have the (env) prefic in front of your command line you know it is wo
 ![alt text](documentation/env.png)
 
 
-Finally go ahead and install the requirements from the requirements.txt file by using **pip install requirements.txt**.
+Finally go ahead and install the requirements from the requirements.txt file by using **pip install -r requirements.txt**.
 
 ## Congrats! Now your are ready to run the script!
 
