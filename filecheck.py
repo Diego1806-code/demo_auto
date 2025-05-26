@@ -8,8 +8,9 @@ def check_json():
         print('data.json does not exist')
 
 def check_pdf():
-    if os.path.exists('data.pdf'):
-        os.remove('data.pdf')
-        print('data.pdf has been deleted')
+    if os.path.exists('output.pdf'):
+        os.remove('output.pdf')
+        print('output.pdf has been deleted')
     else:
-        print('data.pdf does not exist')
+        print('output.pdf does not exist')
+
