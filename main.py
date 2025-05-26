@@ -5,6 +5,8 @@ import filecheck
 import csv
 import json
 import pandas as pd
+import tkinter as tk
+import tkinter.ttk
 
 
 # TODO: add an excel option with GUI
@@ -14,6 +16,18 @@ filecheck.check_pdf()
 
 pdf_source = select_pdf.select_pdf()
 csv_source = select_csv.select_csv()
+
+def clicked():
+    print("Button clicked")
+
+window = tk.Tk()
+
+window.geometry("300x200")
+window.title("PDF and CSV Selector")
+
+btn = tk.Button(window, text="Select Files", command=clicked)
+
+window.mainloop()
 
 print(pdf_source)
 print(csv_source)
