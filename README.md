@@ -18,4 +18,4 @@ Finally go ahead and install the requirements from the requirements.txt file by 
 ## Congrats! Now your are ready to run the script!
 
 
-ORRRR you can also just use the batch file i made after installing python to create the env and get the requirements
+ORRRR you can also just use the batch file i made after installing python to create the env and get the requirements 😘 (but you still need to git clone and everything yourself)
