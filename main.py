@@ -1,7 +1,6 @@
 import pymupdf as fitz
 import select_csv
 import select_pdf
-import parser_csv2json
 import filecheck
 import csv
 import json
@@ -42,4 +41,23 @@ data_entry_data = {
 output = "output.pdf"
 
 with fitz.open(pdf_source) as doc:
-    target_page = doc[0]  # Assuming you want to write on the first page
+    target_page = doc[0]
+    font_rgb = (0, 137, 210)
+    font_color = tuple(value / 255 for value in font_rgb)
+
+
+
+    for indx, field in enumerate(target_page.widgets()):
+        if field.field_type == fitz.PDF_WIDGET_TYPE_TEXT:
+            #field.field_value = '{0}'.format(indx)  this is the code for getting the index of a field
+            field.field_value = str(data_entry_data.get(str(indx), ""))
+            field.update()
+        elif field.field_type == fitz.PDF_WIDGET_TYPE_CHECKBOX:
+            field.field_value = data_entry_data.get(str(indx))
+            field.update()
+            target_page.insert_text(field.rect.tl, "This is index: {0}", format(indx), fontsize=12, color=font_color)
+
+        if indx == len(data_entry_data.values()) - 1:
+            break
+
+    doc.save(output)
