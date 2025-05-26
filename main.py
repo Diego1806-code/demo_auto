@@ -29,13 +29,14 @@ df.to_json('data.json', orient='records', force_ascii=False, indent=4)
 
 
 with open('data.json', 'r', encoding='utf-8') as json_file:
-    data = [json.loads(line) for line in json_file]
+    data = json.load(json_file)
     print(data)
 
 # giving entry data
 
 data_entry_data = {
-    "0" : data[0]["entry_data"],
+    "0" : data[0]["name"],
+    "1" : data[0]["vorname"]
 }
 
 output = "output.pdf"
