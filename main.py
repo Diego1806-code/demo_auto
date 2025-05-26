@@ -6,6 +6,9 @@ import csv
 import json
 import pandas as pd
 
+
+# TODO: add an excel option with GUI
+
 filecheck.check_json()
 filecheck.check_pdf()
 
