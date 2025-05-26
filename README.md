@@ -16,3 +16,6 @@ Now if you have the (env) prefic in front of your command line you know it is wo
 Finally go ahead and install the requirements from the requirements.txt file by using **pip install requirements.txt**.
 
 ## Congrats! Now your are ready to run the script!
+
+
+ORRRR you can also just use the batch file i made after installing python to create the env and get the requirements
