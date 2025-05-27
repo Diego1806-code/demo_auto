@@ -5,9 +5,20 @@ import filecheck
 import csv
 import json
 import pandas as pd
+import tkinter as tk
 
 
 # TODO: add an excel option with GUI
+
+root = tk.Tk()
+
+button = tk.Button(root,
+                   text="Select PDF",
+                   command=select_pdf.select_pdf
+                   )
+button.pack(padx=20, pady=20)
+
+root.mainloop()
 
 filecheck.check_json()
 filecheck.check_pdf()
