@@ -7,7 +7,9 @@ import json
 import pandas as pd
 import parser_csv2json as parser
 import GUI
+import localAI as AI
 
+AI.tryout()
 
 filecheck.check_json()
 filecheck.check_pdf()
