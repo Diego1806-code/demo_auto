@@ -17,13 +17,19 @@ root.title("slect files")
 
 #first button to select pdf file
 
-button = tk.Button(root,
+PDF_button = tk.Button(root,
                    text="Select PDF",
                    command=select_pdf.select_pdf
                    )
-button.pack(padx=20, pady=20, side=tk.TOP)
+PDF_button.pack(padx=20, pady=20, side=tk.TOP)
 
 #button2 to select csv file
+
+CSV_button = tk.Button(root,
+                   text="Select CSV",
+                   command=select_csv.select_csv
+                   )
+CSV_button.pack(padx=20, pady=20, side=tk.TOP)
 
 #exit button
 
