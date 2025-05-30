@@ -12,11 +12,26 @@ import tkinter as tk
 
 root = tk.Tk()
 
+root.geometry("300x200")
+root.title("slect files")
+
+#first button to select pdf file
+
 button = tk.Button(root,
                    text="Select PDF",
                    command=select_pdf.select_pdf
                    )
-button.pack(padx=20, pady=20)
+button.pack(padx=20, pady=20, side=tk.TOP)
+
+#button2 to select csv file
+
+#exit button
+
+cancel = tk.Button(root,
+                   text="Exit",
+                   command=exit
+                   )
+cancel.pack(padx=20, pady=20, side=tk.BOTTOM)
 
 root.mainloop()
 
