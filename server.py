@@ -114,7 +114,7 @@ def ollama_field_mapping(pdf_fields, csv_columns):
     prompt = (
         f"Given these PDF fields: {pdf_fields}\n"
         f"And these CSV columns: {csv_columns}\n"
-        "Suggest a JSON mapping where each PDF field is mapped to the most likely CSV column."
+        "Suggest a JSON mapping where each PDF field is mapped to the most likely CSV column. DO ABSOLUTELY NOT RETURN ANYTHING EXCEPT FOR JSON!!!!!!!!!!! NO RESPONSE OR NOTING "
     )
     response = ollama.generate(
         model="llama3.2",  # or your preferred model
