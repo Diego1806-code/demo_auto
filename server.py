@@ -5,19 +5,97 @@ import ollama
 
 app = Flask(__name__)
 
+# ...existing code...
 UPLOAD_FORM = """
 <!doctype html>
-<title>Upload PDF and CSV</title>
-<h1>Upload PDF and CSV</h1>
-<form method=post enctype=multipart/form-data>
-  <input type=file name=pdf_file accept=".pdf" required>
-  <input type=file name=csv_file accept=".csv" required>
-  <input type=submit value=Upload>
-</form>
-{% if message %}
-  <p>{{ message|safe }}</p>
-{% endif %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload PDF and CSV</title>
+  <style>
+    body {
+      background: #f4f6fb;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      margin-top: 60px;
+      padding: 32px 40px 24px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      min-width: 340px;
+      max-width: 90vw;
+    }
+    h1 {
+      color: #2d3a4b;
+      margin-bottom: 24px;
+      font-size: 1.7em;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    input[type="file"] {
+      padding: 8px;
+      border: 1px solid #cfd8dc;
+      border-radius: 6px;
+      background: #f9fafb;
+      font-size: 1em;
+    }
+    input[type="submit"] {
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    input[type="submit"]:hover {
+      background: #125ea7;
+    }
+    .message {
+      margin-top: 18px;
+      background: #e3f2fd;
+      color: #0d47a1;
+      border-left: 4px solid #1976d2;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1em;
+      word-break: break-all;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Upload PDF and CSV</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="pdf_file" accept=".pdf" required>
+      <input type="file" name="csv_file" accept=".csv" required>
+      <input type="submit" value="Upload">
+    </form>
+    {% if message %}
+      <div class="message">{{ message|safe }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
 """
+# ...existing code...
 
 def extract_pdf_fields(pdf_path):
     fields = []
@@ -66,3 +144,7 @@ def upload():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
+
+
+
+    
