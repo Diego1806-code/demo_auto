@@ -2,6 +2,7 @@ from flask import Flask, request, render_template_string
 import pandas as pd
 import pymupdf as fitz
 import ollama
+import json
 
 app = Flask(__name__)
 
@@ -138,6 +139,8 @@ def upload():
             csv_columns = extract_csv_columns(csv_path)
             mapping = ollama_field_mapping(pdf_fields, csv_columns)
             message = f"Files uploaded!<br><b>AI Mapping Suggestion:</b><pre>{mapping}</pre>"
+            with open("ai_mapping.json", "w", encoding="utf-8") as f:
+              f.write(mapping if mapping.strip().startswith("{") else json.dumps(mapping))
         else:
             message = "Please upload both files."
     return render_template_string(UPLOAD_FORM, message=message)
