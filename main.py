@@ -1,10 +1,5 @@
-import pymupdf as fitz
-import select_csv
 import select_pdf
 import filecheck
-import csv
-import json
-import pandas as pd
 import parser_csv2json as parser
 import GUI
 import localAI as AI
