@@ -4,7 +4,7 @@ import parser_csv2json as parser
 import GUI
 import localAI as AI
 
-AI.tryout()
+AI.getresponse()
 
 filecheck.check_json()
 filecheck.check_pdf()
