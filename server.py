@@ -3,6 +3,7 @@ import pandas as pd
 import pymupdf as fitz
 import ollama
 import json
+import parser_csv2json
 
 app = Flask(__name__)
 
@@ -144,6 +145,20 @@ def upload():
         else:
             message = "Please upload both files."
     return render_template_string(UPLOAD_FORM, message=message)
+
+  # Add this after the existing upload function
+
+@app.route("/process", methods=["POST"])
+def process_files():
+    try:
+        pdf_path = request.form.get("pdf_path")
+        csv_path = request.form.get("csv_path")
+        if pdf_path and csv_path:
+            parser_csv2json.parse_csv_to_json(pdf_path, csv_path)
+            return "PDF processed successfully!", 200
+        return "Missing file paths", 400
+    except Exception as e:
+        return f"Error processing PDF: {str(e)}", 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

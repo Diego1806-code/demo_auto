@@ -1,1 +1,6 @@
-{"fields": {"Text-f2A5gCp1CW": "vorname", "Text-Y9YoKUg3GY": "alter", "CheckBox-6-Yt2sho-k": "name", "CheckBox-X3BHiGUo1h": null}}
+{
+    "Text-f2A5gCp1CW": "vorname",
+    "Text-Y9YoKUg3GY": "alter",
+    "CheckBox-6-Yt2sho-k": "name",
+    "CheckBox-X3BHiGUo1h": "name"
+}
