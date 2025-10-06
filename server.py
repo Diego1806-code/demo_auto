@@ -13,7 +13,7 @@ UPLOAD_FORM = """
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Upload PDF and CSV</title>
+  <title>CSV 2 PDF</title>
   <style>
     body {
       background: #f4f6fb;
@@ -145,8 +145,6 @@ def upload():
         else:
             message = "Please upload both files."
     return render_template_string(UPLOAD_FORM, message=message)
-
-  # Add this after the existing upload function
 
 @app.route("/process", methods=["POST"])
 def process_files():
