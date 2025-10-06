@@ -7,7 +7,6 @@ import parser_csv2json
 
 app = Flask(__name__)
 
-# ...existing code...
 UPLOAD_FORM = """
 <!doctype html>
 <html lang="en">

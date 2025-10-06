@@ -9,7 +9,7 @@ def run_gui():
     selected_pdf = tk.StringVar()
     selected_csv = tk.StringVar()
 
-    def update_continue_state(*args):
+    def update_continue_state():
         # Enable continue if both paths are non-empty
         if selected_pdf.get() and selected_csv.get():
             continue_button.config(state=tk.NORMAL)
